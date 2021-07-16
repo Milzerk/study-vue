@@ -20,26 +20,14 @@
 </head>
 
 <body>
-  <!-- app -->
-  <div id="todo-list-example">
-    <form v-on:submit.prevent="addNewTodo">
-      <label for="new-todo">Tarefa:</label>
-      <input
-        v-model="newTodoText"
-        id="new-todo"
-        placeholder="Ex.: Alimentar o gato"
-      >
-      <button>Adicionar</button>
-    </form>
-    <ul>
-      <li
-        is="todo-item"
-        v-for="(todo, index) in todos"
-        v-bind:key="todo.id"
-        v-bind:title="todo.title"
-        v-on:remove="todos.splice(index, 1)"
-      ></li>
-    </ul>
+  <div id="example-1">
+    <button v-on:click="counter += 1">Adiciona 1</button>
+    <p>Quantas vezes o botão acima foi clicado: {{ counter }}</p>
+  </div>
+  <hr>
+  <div id="example-2">
+    <!-- `greet` é o nome de um método definido abaixo -->
+    <button v-on:click="greet">Cumprimentar</button>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
