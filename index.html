@@ -21,9 +21,9 @@
 
 <body>
   <div id="app">
-    <button v-on:click="warn('Form cannot be submitted yet.', $event)">
-      Enviar
-    </button>
+    <input v-on:keyup.enter="teste"> <br>
+    <input v-on:keyup.page-down="teste"> <br>
+    <input v-on:keyup.alt.67="clear"> <br>
   </div>
   
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->

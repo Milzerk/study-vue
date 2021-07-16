@@ -4,12 +4,11 @@ var vm = new Vue({
         counter: 0
     },
     methods: {
-        warn: function (message, event) {
-            // agora temos acesso ao evento nativo
-            if (event) {
-                event.preventDefault()
-            }
-            alert(message)
+        teste: function () {
+            alert('teste');
+        },
+        clear: function() {
+            alert('clear');
         }
     }
 })
