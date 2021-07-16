@@ -9,7 +9,14 @@
 <body>
   <!-- app -->
   <div id="app">
-    <span>Menságem: {{msg}}</span>
+    <p>Interpolação textual: {{ rawHtml }}</p>
+    <p v-html='rawHtml'>Diretiva v-html: {{ rawHtml }}</p>
+    <button v-bind:id="dynamicId" v-bind:disabled="isButtonDisabled">Click me!</button>
+    <p>{{ 1 + '1'}}</p>
+    <p>{{ 1 + 1}}</p>
+    <p v-if="seen">Agora você me viu</p>
+    <a v-bind:href="url">Link</a> <br>
+    <a v-bind:[attributename]="url"> argumentos dinâmicos </a>
   </div>
   
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
