@@ -12,11 +12,28 @@
 
   <div id="components-demo">
     <button-counter></button-counter>
-    <blog-post
-      v-for="post in posts"
-      v-bind:key="post.id"
-      v-bind:post="post"
-    ></blog-post>
+    <div :style="{ fontSize: postFontSize + 'em' }">
+      <blog-post 
+        v-for="post in posts" 
+        v-bind:key="post.id"
+        v-bind:post="post"
+        v-on:enlarge-text="onEnlargeText">
+      </blog-post>
+    </div>
+    <br>
+    <custom-input
+      v-model="searchText">
+    </custom-input>
+    <br>
+    <custom-input
+      v-model="searchText">
+    </custom-input>
+    <br>
+    <custom-input
+      v-model="searchText">
+    </custom-input>
+    <br>  
+    <span>{{searchText}}</span>
   </div>
 
 

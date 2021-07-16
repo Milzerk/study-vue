@@ -13,8 +13,21 @@ Vue.component('blog-post', {
   template: `
     <div class="blog-post">
       <h3>{{ post.title }}</h3>
+      <button v-on:click="$emit('enlarge-text', 0.1)">
+        Aumentar fonte
+      </button>
       <div v-html="post.content"></div>
     </div>
+  `
+})
+
+Vue.component('custom-input', {
+  props: ['value'],
+  template: `
+    <input
+      v-bind:value="value"
+      v-on:input="$emit('input', $event.target.value)"
+    >
   `
 })
 
@@ -25,6 +38,13 @@ new Vue({
       { id: 1, title: '- Minha jornada com Vue', content: '<h4>conteúdo 1</h4>' },
       { id: 2, title: '- Postagens com Vue', content: '<h4>conteúdo 2</h4>' },
       { id: 6, title: '- Porque Vue é tão divertido', content: '<h4>conteúdo 3</h4>' }
-    ]
+    ],
+    postFontSize: 1,
+    searchText: ''
+  },
+  methods: {
+    onEnlargeText: function (enlargeAmount) {
+      this.postFontSize += enlargeAmount
+    }
   }
 })
