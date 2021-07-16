@@ -20,7 +20,9 @@
 <body>
   <!-- app -->
   <div id="app">
-    <div v-bind:class="classObject">teste</div>
+    <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">
+      teste
+    </div>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
