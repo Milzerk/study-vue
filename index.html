@@ -6,29 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue Study</title>
-  <style>
-    .active {
-      color: green;
-    }
-
-    .text-danger {
-      border: 1px;
-      border-color: red;
-      border-style: solid;
-    }
-  </style>
 </head>
 
 <body>
-  <div id="app">
-    <input v-on:keyup.enter="teste"> <br>
-    <input v-on:keyup.page-down="teste"> <br>
-    <input v-on:keyup.alt.67="clear"> <br>
+
+  <div id="components-demo">
+    <button-counter></button-counter>
   </div>
-  
+
+
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 <div></div>
+
 </html>
