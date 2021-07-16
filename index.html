@@ -5,13 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue Study</title>
+  <style>
+    .active {
+      color: green;
+    }
+
+    .text-danger {
+      border: 1px;
+      border-color: red;
+      border-style: solid;
+    }
+  </style>
 </head>
 <body>
   <!-- app -->
   <div id="app">
-
+    <div v-bind:class="{ active: isActive, 'text-danger': hasError  }">teste</div>
   </div>
-  
+
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="./assets/js/script.js"></script>
