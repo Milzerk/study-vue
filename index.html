@@ -22,9 +22,8 @@
 <body>
   <!-- app -->
   <div id="app">
-    <div v-bind:style="styleObject">
-      teste
-    </div>
+    <h1 v-if="awesome">Vue é incrível!</h1>
+    <h1 v-else>Oh não 😢</h1>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
