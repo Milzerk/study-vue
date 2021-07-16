@@ -22,8 +22,18 @@
 <body>
   <!-- app -->
   <div id="app">
-    <h1 v-if="awesome">Vue é incrível!</h1>
-    <h1 v-else>Oh não 😢</h1>
+    <div v-if="type === 'A'">
+      A
+    </div>
+    <div v-else-if="type === 'B'">
+      B
+    </div>
+    <div v-else-if="type === 'C'">
+      C
+    </div>
+    <div v-else>
+      Não é A, B ou C
+    </div>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
