@@ -22,14 +22,11 @@
 <body>
   <!-- app -->
   <div id="app">
-    <template v-if="loginForUser">
-      <label>Usuário</label>
-      <input placeholder="Informe o nome de usuário" key="username-input">
-    </template>
-    <template v-else>
-      <label>E-mail</label>
-      <input placeholder="Informe o endereço de e-mail" key="emails-input">
-    </template>
+    <ul id="example-1">
+      <li v-for="(item, index) in items" :key="item.message">
+        {{index}}-{{ item.message }}
+      </li>
+    </ul>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->

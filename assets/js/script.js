@@ -1,6 +1,9 @@
 var vm = new Vue({
     el: '#app',
     data: {
-        loginForUser: true
+        items: [
+            { message: 'Algo' },
+            { message: 'Outro' }
+        ]
     }
 })
