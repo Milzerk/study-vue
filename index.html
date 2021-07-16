@@ -7,6 +7,18 @@
   <title>Vue Study</title>
 </head>
 <body>
-  
+  <div id="app">
+    {{ message }}
+  </div>
+  <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Olá Vue!'
+      }
+    })
+  </script>
 </body>
 </html>
