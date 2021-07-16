@@ -9,16 +9,14 @@
 <body>
   <!-- app -->
   <div id="app">
-    <p>Interpolação textual: {{ rawHtml }}</p>
-    <p v-html='rawHtml'>Diretiva v-html: {{ rawHtml }}</p>
-    <button v-bind:id="dynamicId" v-bind:disabled="isButtonDisabled">Click me!</button>
-    <p>{{ 1 + '1'}}</p>
-    <p>{{ 1 + 1}}</p>
-    <p v-if="seen">Agora você me viu</p>
-    <a v-bind:href="url">Link</a> <br>
-    <a v-bind:[attributename]="url"> argumentos dinâmicos </a>
+    <p>Mensagem original: "{{ message }}"</p>
+    <p>Mensagem ao contrário computed: "{{ reversedMessage }}"</p>
+    <p>Mensagem ao contrário method: "{{ reverseMessage() }}"</p>
+    <p>Hora atual computed: "{{ now }}"</p>
+    <p>Hora atual method: "{{ nowTime() }}"</p>
   </div>
-  
+  <hr>
+  <div id="demo">{{ fullName }}</div>
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="./assets/js/script.js"></script>
