@@ -25,3 +25,12 @@ var example2 = new Vue({
 
 // você pode invocar métodos no JavaScript também
 example2.greet() // => 'Olá Vue.js!'
+
+new Vue({
+    el: '#example-3',
+    methods: {
+        say: function (message) {
+            alert(message)
+        }
+    }
+})
