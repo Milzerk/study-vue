@@ -20,20 +20,12 @@
 </head>
 
 <body>
-  <div id="example-1">
-    <button v-on:click="counter += 1">Adiciona 1</button>
-    <p>Quantas vezes o botão acima foi clicado: {{ counter }}</p>
+  <div id="app">
+    <button v-on:click="warn('Form cannot be submitted yet.', $event)">
+      Enviar
+    </button>
   </div>
-  <hr>
-  <div id="example-2">
-    <!-- `greet` é o nome de um método definido abaixo -->
-    <button v-on:click="greet">Cumprimentar</button>
-  </div>
-  <hr>
-  <div id="example-3">
-    <button v-on:click="say('oi')">Diga oi</button>
-    <button v-on:click="say('tchau')">Diga tchau</button>
-  </div>
+  
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="./assets/js/script.js"></script>
