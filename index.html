@@ -12,6 +12,11 @@
 
   <div id="components-demo">
     <button-counter></button-counter>
+    <blog-post
+      v-for="post in posts"
+      v-bind:key="post.id"
+      v-bind:post="post"
+    ></blog-post>
   </div>
 
 
