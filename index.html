@@ -21,11 +21,24 @@
 
 <body>
   <!-- app -->
-  <div id="app">
-    <ul id="example-1">
-      <li v-for="(item, index) in items" :key="item.message">
-        {{index}}-{{ item.message }}
-      </li>
+  <div id="todo-list-example">
+    <form v-on:submit.prevent="addNewTodo">
+      <label for="new-todo">Tarefa:</label>
+      <input
+        v-model="newTodoText"
+        id="new-todo"
+        placeholder="Ex.: Alimentar o gato"
+      >
+      <button>Adicionar</button>
+    </form>
+    <ul>
+      <li
+        is="todo-item"
+        v-for="(todo, index) in todos"
+        v-bind:key="todo.id"
+        v-bind:title="todo.title"
+        v-on:remove="todos.splice(index, 1)"
+      ></li>
     </ul>
   </div>
 
