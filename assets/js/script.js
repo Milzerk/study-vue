@@ -1,7 +1,9 @@
 var vm = new Vue({
     el: '#app',
     data: {
-        activeColor: 'green',
-        fontSize: 30
+        styleObject: { 
+            color: 'green',
+            fontSize: '1.5em'
+        }
     }
 })
