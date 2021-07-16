@@ -22,18 +22,14 @@
 <body>
   <!-- app -->
   <div id="app">
-    <div v-if="type === 'A'">
-      A
-    </div>
-    <div v-else-if="type === 'B'">
-      B
-    </div>
-    <div v-else-if="type === 'C'">
-      C
-    </div>
-    <div v-else>
-      Não é A, B ou C
-    </div>
+    <template v-if="loginForUser">
+      <label>Usuário</label>
+      <input placeholder="Informe o nome de usuário" key="username-input">
+    </template>
+    <template v-else>
+      <label>E-mail</label>
+      <input placeholder="Informe o endereço de e-mail" key="emails-input">
+    </template>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
