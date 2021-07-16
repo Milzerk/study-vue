@@ -31,6 +31,15 @@ Vue.component('custom-input', {
   `
 })
 
+Vue.component('alert-box', {
+  template: `
+    <div style="font-size: 25px; border: red solid;">
+      <strong>Erro!</strong>
+      <slot></slot>
+    </div>
+  `
+})
+
 new Vue({
   el: '#components-demo',
   data: {
