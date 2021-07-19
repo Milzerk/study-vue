@@ -1,22 +1,9 @@
-/* component Local */
-var localComponent = {
-  template: '<p>Isto é um local componente</p>'
-};
-
-/* component Global */
-Vue.component('global-component', {
-  template: '<p>Isto é um global componente</p>'
+Vue.component('blog-post', {
+  // camelCase em JavaScript
+  props: ['postTitle'],
+  template: '<h3>{{ postTitle }}</h3>'
 })
 
-/* instância Local */
-var app1 = new Vue({
-  el: '#app1',
-  components: {
-    'local-component': localComponent
-  }
+var vm = new Vue({
+  el: '#app',
 });
-
-/* instância Global */
-var app2 = new Vue({
-  el: '#app2'
-})
