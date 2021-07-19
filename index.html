@@ -6,21 +6,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue Study</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 
-  <div id="dynamic-component-demo" class="demo">
-    <button
-      v-for="tab in tabs"
-      v-bind:key="tab"
-      v-bind:class="['tab-button', { active: currentTab === tab }]"
-      v-on:click="currentTab = tab"
-    >
-      {{ tab }}
-    </button>
+  <header>
+    <a href="#">Logo</a>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <component v-bind:is="currentTabComponent" class="tab"></component>
+  <h1 class="section-title">Home</h1>
+  <div id="app">
+    <section class="box-home">
+      <home-box
+        v-for="post in posts"
+        v-bind:key="post.id"
+        v-bind:post="post"
+      ></home-box>
+    </section>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
