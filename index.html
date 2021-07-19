@@ -11,7 +11,7 @@
 <body>
 
   <div id="app">
-    <base-checkbox v-on:focus.native="onFocus"></base-checkbox>
+    <base-checkbox v-bind:value="lovingVue" v-on:input="onFocus"></base-checkbox>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->

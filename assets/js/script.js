@@ -1,18 +1,39 @@
 Vue.component('base-checkbox', {
+  inheritAttrs: false,
+  props: ['label', 'value'],
+  computed: {
+    inputListeners() {
+      var vm = this;      
+      return Object.assign({},
+        this.$listeners,
+        {
+          input: function (event) {
+            vm.$emit('input', event.target.value)
+          }
+        }
+      );
+    }
+  },
   template: `
-    <input type="text">
+    <label>
+      {{ value }}
+      <input
+        v-bind="$attrs"
+        v-bind:value="value"
+        v-on="inputListeners"
+      >
+    </label>
   `
 });
 
 var vm = new Vue({
   el: '#app',
   data: {
-    lovingVue: false
+    lovingVue: 'ddss'
   },
   methods: {
-    onFocus: function(event) {
-      console.log('evento');
-      console.log(event);
+    onFocus(event) {
+      this.lovingVue = event
     }
-  }
+  },
 });
