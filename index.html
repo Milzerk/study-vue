@@ -10,36 +10,18 @@
 
 <body>
 
-  <div id="components-demo">
-    <button-counter></button-counter>
-    <div :style="{ fontSize: postFontSize + 'em' }">
-      <blog-post 
-        v-for="post in posts" 
-        v-bind:key="post.id"
-        v-bind:post="post"
-        v-on:enlarge-text="onEnlargeText">
-      </blog-post>
-    </div>
-    <br>
-    <custom-input
-      v-model="searchText">
-    </custom-input>
-    <br>
-    <custom-input
-      v-model="searchText">
-    </custom-input>
-    <br>
-    <custom-input
-      v-model="searchText">
-    </custom-input>
-    <br>  
-    <span>{{searchText}}</span>
-    <br>
-    <alert-box>
-      Algo ruim aconteceu.
-    </alert-box>
-  </div>
+  <div id="dynamic-component-demo" class="demo">
+    <button
+      v-for="tab in tabs"
+      v-bind:key="tab"
+      v-bind:class="['tab-button', { active: currentTab === tab }]"
+      v-on:click="currentTab = tab"
+    >
+      {{ tab }}
+    </button>
 
+    <component v-bind:is="currentTabComponent" class="tab"></component>
+  </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
