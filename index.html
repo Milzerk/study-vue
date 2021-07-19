@@ -12,7 +12,8 @@
 
   <div id="app">
     <h1>property</h1>
-    <blog-post post-title="hello!"></blog-post>
+    <blog-post v-bind:post-title="theValue"></blog-post>
+    <p>{{ theValue.valor }}</p>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
