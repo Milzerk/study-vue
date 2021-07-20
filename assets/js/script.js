@@ -11,11 +11,14 @@ Vue.component('menu-link', {
   template: `
       <div>
         <i>valor x</i>
-        <slot></slot>
+        <slot>Isso é o menu padrão</slot>
       <div>
     `
 });
 
 var vm = new Vue({
   el: "#app",
+  data: {
+    nome: 'john doe'
+  }
 });
