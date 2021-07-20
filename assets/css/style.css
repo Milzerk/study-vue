@@ -28,5 +28,22 @@ body {
 }
 
 .menus > li {
-    padding: 4px 0;
+    margin-bottom: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.menus > li::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 1px;
+    background: black;
+    left: 0;
+    bottom: -5px;
+    transition: 0.2s;
+}
+
+.menus > li:hover::after {
+    width: 100%;
 }
