@@ -19,7 +19,9 @@
     >
       {{ tab }}
     </button>
-    <component v-bind:is="getCurrentTab"></component>
+    <keep-alive>
+      <component v-bind:is="getCurrentTab"></component>
+    </keep-alive>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
