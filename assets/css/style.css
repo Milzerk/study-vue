@@ -47,3 +47,7 @@ body {
 .menus > li:hover::after {
     width: 100%;
 }
+
+.menus > li.active::after {
+    width: 100%;
+}

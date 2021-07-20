@@ -6,17 +6,17 @@ Vue.component('tab-postagens', {
         {
           id: 1,
           title: 'post1',
-          content: 'Conteúdo da postagem 1'
+          content: 'Conteúdo da postagem 1',
         },
         {
           id: 2,
           title: 'post2',
-          content: 'Conteúdo da postagem 2'
+          content: 'Conteúdo da postagem 2',
         },
         {
           id: 3,
           title: 'post3',
-          content: 'Conteúdo da postagem 3'
+          content: 'Conteúdo da postagem 3',
         }       
       ]
     }
@@ -30,7 +30,9 @@ Vue.component('tab-postagens', {
           <li
             v-for="(post, chave) in posts"
             v-bind:key="chave"
-            v-on:click="currentPost = post">
+            v-on:click="currentPost = post"
+            v-bind:class="{active: post.id === currentPost.id }"
+            >
             {{ post.title }}
           </li>
         </ul>
