@@ -49,6 +49,15 @@ Vue.component('tab-arquivo', {
     `
 });
 
+Vue.component('async-example', function (resolve, reject) {
+  setTimeout(function () {
+    // Passa a definição do componente para resolver o callback
+    resolve({
+      template: '<div>I am async!</div>'
+    })
+  }, 10000)
+})
+
 var vm = new Vue({
   el: '#app',
   data: {
