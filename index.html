@@ -19,6 +19,21 @@
       <br>
       <menu-link></menu-link>
     </navigation-link>
+    <br>
+    <hr>
+    <br>
+    <base-layout>
+      <template v-slot:header>
+        <h1>Aqui pode estar um título da página</h1>
+      </template>
+    
+      <p>Um parágrafo para o conteúdo principal.</p>
+      <p>E um outro parágrafo.</p>
+    
+      <template v-slot:footer>
+        <p>Aqui estão algumas informações de contato</p>
+      </template>
+    </base-layout>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
