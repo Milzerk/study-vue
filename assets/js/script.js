@@ -1,58 +1,55 @@
-Vue.component('navigation-link', {
+Vue.component('todo-list', {
+  props: ['todos'],
   template: `
-      <div>
-        <h1>Isso é um teste com slots</h1>
-        <slot></slot>
-      </div>
-    `
-});
-
-Vue.component('menu-link', {
-  template: `
-      <div>
-        <i>valor x</i>
-        <slot>Isso é o menu padrão</slot>
-      <div>
-    `
-});
-
-Vue.component('base-layout', {
-  template: `
-      <div class="container">
-        <header>
-          <slot name="header"></slot>
-        </header>
-        <main>
-          <slot></slot>
-        </main>
-        <footer>
-          <slot name="footer"></slot>
-        </footer>
-      </div>
-    `
-});
-
-Vue.component('current-user', {
-  data() {
-    return {
-      user: {
-        firstName: 'Miller',
-        lastName: 'Kisley'
-      }
-    }
-  },
-  template: `
-      <span>
-        <slot v-bind:user="user">
-          {{ user.lastName }}
+    <ul>
+      <li
+        v-for="todo in todos"
+        v-bind:key="todo.id"
+      >
+        <slot name="todo" v-bind:todo="todo">
+          {{ todo.text }}
         </slot>
-      </span>
-    `
+      </li>
+    </ul>
+  `
 });
 
 var vm = new Vue({
   el: "#app",
   data: {
-    nome: 'john doe'
+    filteredTodos: [
+        {
+          text: 'text1',
+          isComplete: false
+        },
+        {
+          text: 'text2',
+          isComplete: false
+        },
+        {
+          text: 'text3',
+          isComplete: true
+        },
+        {
+          text: 'text4',
+          isComplete: false
+        },
+        {
+          text: 'text5',
+          isComplete: false
+        },
+        {
+          text: 'text6',
+          isComplete: true
+        },
+        {
+          text: 'text7',
+          isComplete: false
+        },
+        {
+          text: 'text8',
+          isComplete: false
+        },
+    ]
   }
 });

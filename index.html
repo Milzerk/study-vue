@@ -12,34 +12,12 @@
 <body>
   
   <div id="app">
-    <navigation-link>
-      <menu-link>  
-        <p>Olá <b>Mundo</b> {{nome}}</p>
-      </menu-link>
-      <br>
-      <menu-link></menu-link>
-    </navigation-link>
-    <br>
-    <hr>
-    <br>
-    <base-layout>
-      <template #header>
-        <h1>Aqui pode estar um título da página</h1>
+    <todo-list v-bind:todos='filteredTodos'>
+      <template v-slot:todo="{ todo }">
+        <span v-if="todo.isComplete">✓</span>
+        {{ todo.text }}
       </template>
-    
-      <p>Um parágrafo para o conteúdo principal.</p>
-      <p>E um outro parágrafo.</p>
-    
-      <template v-slot:footer>
-        <p>Aqui estão algumas informações de contato</p>
-      </template>
-    </base-layout>
-    <br>
-    <hr>
-    <br>
-    <current-user v-slot="slotProps">
-        {{ slotProps.user.firstName }}
-    </current-user>
+    </todo-list>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
