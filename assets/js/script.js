@@ -32,6 +32,24 @@ Vue.component('base-layout', {
     `
 });
 
+Vue.component('current-user', {
+  data() {
+    return {
+      user: {
+        firstName: 'Miller',
+        lastName: 'Kisley'
+      }
+    }
+  },
+  template: `
+      <span>
+        <slot v-bind:user="user">
+          {{ user.lastName }}
+        </slot>
+      </span>
+    `
+});
+
 var vm = new Vue({
   el: "#app",
   data: {

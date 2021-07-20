@@ -34,6 +34,12 @@
         <p>Aqui estão algumas informações de contato</p>
       </template>
     </base-layout>
+    <br>
+    <hr>
+    <br>
+    <current-user v-slot="slotProps">
+        {{ slotProps.user.firstName }}
+    </current-user>
   </div>
 
   <!-- versão de desenvolvimento, inclui avisos úteis no console  -->
