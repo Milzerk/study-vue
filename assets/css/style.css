@@ -3,6 +3,7 @@
     padding: 0px;
     font-family: Arial;
     font-size: 1rem;
+    list-style: none;
 }
 
 h1 {
@@ -13,4 +14,19 @@ body {
     margin: 16px;
     padding: 16px;
     background: #DADADA;
+}
+
+.tab {
+    padding: 1rem;
+    margin-top: 1rem;
+    border: black solid 1px;
+    display: flex;
+}
+
+.contentPost {
+    margin-left: 40px;
+}
+
+.menus > li {
+    padding: 4px 0;
 }
